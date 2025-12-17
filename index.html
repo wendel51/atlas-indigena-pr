@@ -7,6 +7,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Eczar:wght@800&family=Ruslan+Display&display=swap" rel="stylesheet">  
+    
     <style>
         html { scroll-behavior: smooth; }
         
@@ -22,7 +24,7 @@
             top: 0;
             width: 100%;
             background-color: rgba(139, 69, 19, 0.95);
-            padding: 15px 0;
+            padding: 23px 0;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             text-align: center;
@@ -61,6 +63,14 @@
         }
         .btn-nav-mapa:hover { background: #eee; }
 
+        .nav-logo {
+        height: 60px;       /* Altura da barra */
+        width: 60px;        /* Largura igual para ficar redonda */
+        object-fit: cover;  /* Corta a foto para caber */
+        
+        vertical-align: middle; /* Alinha com o texto */
+        border: 2px solid white; /* Borda branca igual a do mapa */    }
+
 
         /* --- SEÇÕES --- */
         section {
@@ -74,15 +84,27 @@
         }
 
         #capa {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('capa_foto.JPG');
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('capa_foto.JPG');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
             text-align: center;
+        
         }
-
-        #sobre { background-color: #fdfaf6; color: #555; }
+            
+        #capa h1 {
+            font-family: 'Eczar', serif;
+            font-weight: 800; /* Extra negrito */
+            font-size: 5em;   /* Pode ser bem grande */
+            line-height: 0.9;
+            color: #fff;
+            
+            /* Sombra cor de barro/terra para destacar */
+            text-shadow: 4px 4px 0px #5c2808; 
+            
+            margin-bottom: 20px;
+        }
         #metodologia { background-color: #e8e4dc; }
 
         h1 { font-family: 'Merriweather', serif; font-size: 3.5em; margin-bottom: 10px; }
@@ -107,10 +129,16 @@
 
         /* --- ESTILO DA SEÇÃO DE TEMAS --- */
         #temas {
-            background-color: #f4f4f4; /* Cinza bem clarinho */
+            background-color: whitesmoke;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
             color: #333;
-            min-height: auto; /* Não precisa ocupar a tela toda se não tiver conteúdo suficiente */
             padding: 80px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         .container-temas {
@@ -186,21 +214,31 @@
             line-height: 1.5;
             text-align: center;
         }
+
+        #sobre { 
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('foto_sobre.JPG');
+            background-size: cover;
+            background-position: center;
+            background-attachment: local;
+            color: white;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
 
     <nav>
+        <img src="atlas_pr_cortada.jpg" class="nav-logo">
         <a href="#capa" class="nav-link">Início</a>
+        <a href="#temas" class="nav-link">Dados</a>
         <a href="#sobre" class="nav-link">O Projeto</a>
         <a href="#metodologia" class="nav-link">Metodologia</a>
-        
         <a href="mapa.html" class="btn-nav-mapa">Abrir Mapa</a>
     </nav>
 
     <section id="capa">
-        <h1>Atlas Indígena</h1>
-        <p style="text-align: center; color: #ddd;">Uma jornada pela territorialidade no Paraná.</p>
+        <h1>Atlas Indígena do paraná</h1>
     </section>
 
     <section id="temas">
@@ -211,7 +249,7 @@
 <div class="cards-grid">
                 
                 <a href="tema_territorios.html" class="card">
-                    <img src="card_populacao.jpg" alt="Foto de uma Terra Indígena" class="card-img">
+                    <img src="tema_anuncios.jpg" alt="Foto de uma Terra Indígena" class="card-img">
                        <div class="card-content">
                         <h3>Anúncios</h3>
                         <p>Sobre o panorâma indígena recente no Paraná</p>
@@ -222,7 +260,7 @@
                     <img src="tema_lutas.jpeg" alt="Foto de pessoas indígenas" class="card-img">
                     <div class="card-content">
                         <h3>Lutas</h3>
-                        <p>Sobre as principais frentes de luta indígena no Paraná</p>
+                        <p>Sobre as principais frentes de lutas indígenas no Paraná</p>
                     </div>
                 </a>
 
